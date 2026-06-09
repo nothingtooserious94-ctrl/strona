@@ -1,7 +1,7 @@
 import React from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Phone, MessageCircle, Mail, X, Check, Play } from "lucide-react";
+import { Phone, MessageCircle, Mail, X, Check } from "lucide-react";
 import { useState } from "react";
 import { motion } from "framer-motion";
 
@@ -20,7 +20,7 @@ export default function App() {
                 <div>
                     <p className="text-sm font-semibold text-blue-600 mb-2">Angielski dla dorosłych • Konwersacje • Realne efekty</p>
                     <h1 className="text-4xl md:text-5xl font-bold leading-tight">Zacznij mówić po angielsku już od pierwszej lekcji</h1>
-                    <p className="mt-6 text-lg text-gray-600">Bez wkuwania. Bez stresu. Skupiamy się na mówieniu i sytuacjach, które naprawdę wykorzystasz w pracy i życiu.</p>
+                    <p className="mt-6 text-lg text-gray-600">Angielski, którego naprawdę użyjesz — w pracy, na rozmowach i w życiu codziennym.<br />Bez stresu i zbędnej teorii.</p>
                     <ul className="mt-6 space-y-3 text-gray-700">
                         <li className="flex items-center gap-2"><Check size={20} className="text-blue-600" /> Przełamiesz blokadę mówienia</li>
                         <li className="flex items-center gap-2"><Check size={20} className="text-blue-600" /> Nauka dopasowana do Twoich celów</li>
@@ -69,7 +69,18 @@ export default function App() {
             {/* VIDEO */}
             <section className="py-16 max-w-4xl mx-auto px-6">
                 <h2 className="text-3xl font-semibold mb-8 text-center">Poznaj mnie i mój styl pracy</h2>
-                <div className="rounded-[32px] overflow-hidden shadow-2xl border border-black bg-black p-3"><div onClick={() => window.open('https://youtube.com/shorts/Ompad8UvEZM', '_blank')} className="aspect-video rounded-[26px] overflow-hidden relative cursor-pointer group"><img src="https://i.ytimg.com/vi/Ompad8UvEZM/hqdefault.jpg" alt="Poznaj mnie i mój styl pracy" className="w-full h-full object-cover object-center scale-[1.33] group-hover:scale-[1.38] transition duration-500" /><div className="absolute top-0 bottom-0 left-0 w-[22%] bg-black"></div><div className="absolute top-0 bottom-0 right-0 w-[22%] bg-black"></div><div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" /><div className="absolute inset-0 flex items-center justify-center"><div className="w-20 h-20 rounded-full bg-white/90 backdrop-blur-md flex items-center justify-center shadow-2xl group-hover:scale-110 transition text-black"><Play size={32} className="fill-current ml-1" /></div></div><div className="absolute bottom-6 left-6 right-6 flex items-end justify-between"><div><p className="text-white text-2xl font-semibold">Poznaj mnie i mój styl pracy</p><p className="text-gray-300 text-sm mt-1">Kliknij, aby otworzyć film na YouTube</p></div><button onClick={(e) => { e.stopPropagation(); (async () => { try { await navigator.clipboard.writeText('https://youtube.com/shorts/Ompad8UvEZM'); alert('Link skopiowany'); } catch (err) { const ta = document.createElement('textarea'); ta.value = 'https://youtube.com/shorts/Ompad8UvEZM'; document.body.appendChild(ta); ta.select(); document.execCommand('copy'); document.body.removeChild(ta); alert('Link skopiowany'); } })(); }} className="bg-white text-black px-4 py-2 rounded-full text-sm font-medium hover:scale-105 transition">Kopiuj link</button></div></div></div>
+                <div className="rounded-[32px] overflow-hidden shadow-2xl border border-black bg-black p-3">
+                    <div className="aspect-video rounded-[26px] overflow-hidden relative bg-black">
+                        <iframe
+                            className="absolute inset-0 w-full h-full"
+                            src="https://www.youtube.com/embed/nEQekcQjJsI?rel=0&modestbranding=1"
+                            title="Poznaj mnie i mój styl pracy"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerPolicy="strict-origin-when-cross-origin"
+                            allowFullScreen
+                        />
+                    </div>
+                </div>
             </section>
 
             {/* OPINIE */}
