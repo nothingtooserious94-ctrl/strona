@@ -22,9 +22,9 @@ export default function App() {
                     <h1 className="text-4xl md:text-5xl font-bold leading-tight">Zacznij mówić po angielsku już od pierwszej lekcji</h1>
                     <p className="mt-6 text-lg text-gray-600">Angielski, którego naprawdę użyjesz — w pracy, na rozmowach i w życiu codziennym.<br />Bez stresu i zbędnej teorii.</p>
                     <ul className="mt-6 space-y-3 text-gray-700">
-                        <li className="flex items-center gap-2"><Check size={20} className="text-blue-600 shrink-0" /><span className="font-medium">Przełamiesz blokadę mówienia</span></li>
-                        <li className="flex items-center gap-2"><Check size={20} className="text-blue-600 shrink-0" /><span className="font-medium">Nauka dopasowana do Twoich celów</span></li>
-                        <li className="flex items-center gap-2"><Check size={20} className="text-blue-600 shrink-0" /><span className="font-medium">Konkretny feedback po każdej lekcji</span></li>
+                        <li className="flex items-center gap-2"><Check size={20} className="text-black shrink-0" /><span className="font-medium">Przełamiesz blokadę mówienia</span></li>
+                        <li className="flex items-center gap-2"><Check size={20} className="text-black shrink-0" /><span className="font-medium">Nauka dopasowana do Twoich celów</span></li>
+                        <li className="flex items-center gap-2"><Check size={20} className="text-black shrink-0" /><span className="font-medium">Konkretny feedback po każdej lekcji</span></li>
                     </ul>
                     <div className="mt-8 flex flex-col gap-4 w-full">
                         <Button onClick={() => setShowContactModal(true)} className="text-lg px-6 py-4 rounded-2xl bg-blue-600 hover:bg-blue-700 hover:text-white text-white w-full">Umów pierwszą lekcję</Button>
@@ -41,9 +41,9 @@ export default function App() {
                                 <div className="w-8 h-8 rounded-full bg-gray-200 flex items-center justify-center text-xs font-semibold border-2 border-white">300+</div>
                             </div>
                             <div className="text-gray-600 leading-tight">
-                                <p className="hidden sm:block text-sm">5000+ przeprowadzonych lekcji • 5★ ocen</p>
-                                <p className="block sm:hidden text-[11px]">5000+ lekcji</p>
-                                <p className="block sm:hidden text-[11px]">5★ ocen</p>
+                                <p className="hidden sm:block text-sm font-medium">5000+ przeprowadzonych lekcji • 5★ ocen</p>
+                                <p className="block sm:hidden text-[11px] font-medium">5000+ lekcji</p>
+                                <p className="block sm:hidden text-[11px] font-medium">5★ ocen</p>
                             </div>
                         </div>
                     </div>
@@ -129,22 +129,22 @@ export default function App() {
                 <h2 className="text-3xl font-semibold mb-10">Oferta</h2>
                 <div className="grid md:grid-cols-3 gap-8 items-stretch">
                     <Card className="rounded-2xl shadow-md border-2 border-black h-full"><CardContent className="p-6 h-full flex flex-col"><h3 className="text-xl font-bold mb-4">1:1</h3><ul className="space-y-3 text-gray-600 flex-1">
-                        <li className="flex items-start gap-2"><Check size={16} className="text-blue-600 mt-1 shrink-0" /> Nauka dopasowana do Twoich celów</li>
-                        <li className="flex items-start gap-2"><Check size={16} className="text-blue-600 mt-1 shrink-0" /> Konwersacje + praktyczne scenariusze</li>
-                        <li className="flex items-start gap-2"><Check size={16} className="text-blue-600 mt-1 shrink-0" /> Szybkie przełamanie bariery</li>
-                        <li className="flex items-start gap-2"><Check size={16} className="text-blue-600 mt-1 shrink-0" /> Feedback po każdej lekcji</li>
+                        <li className="flex items-start gap-2"><Check size={16} className="text-black mt-1 shrink-0" /> Nauka dopasowana do Twoich celów</li>
+                        <li className="flex items-start gap-2"><Check size={16} className="text-black mt-1 shrink-0" /> Konwersacje + praktyczne scenariusze</li>
+                        <li className="flex items-start gap-2"><Check size={16} className="text-black mt-1 shrink-0" /> Szybkie przełamanie bariery</li>
+                        <li className="flex items-start gap-2"><Check size={16} className="text-black mt-1 shrink-0" /> Feedback po każdej lekcji</li>
                     </ul><Button onClick={() => setShowContactModal(true)} className="mt-6 w-full rounded-2xl">Zacznij</Button></CardContent></Card>
                     <Card className="rounded-2xl shadow-md border-2 border-black h-full"><CardContent className="p-6 h-full flex flex-col"><h3 className="text-xl font-bold mb-4">Grupy (2–3 osoby)</h3><ul className="space-y-3 text-gray-600 flex-1">
-                        <li className="flex items-start gap-2"><Check size={16} className="text-blue-600 mt-1 shrink-0" /> Podobny poziom (weryfikacja przed startem)</li>
-                        <li className="flex items-start gap-2"><Check size={16} className="text-blue-600 mt-1 shrink-0" /> Dynamiczne konwersacje</li>
-                        <li className="flex items-start gap-2"><Check size={16} className="text-blue-600 mt-1 shrink-0" /> Więcej mówienia w krótszym czasie</li>
-                        <li className="flex items-start gap-2"><Check size={16} className="text-blue-600 mt-1 shrink-0" /> Nauka przez interakcję</li>
+                        <li className="flex items-start gap-2"><Check size={16} className="text-black mt-1 shrink-0" /> Podobny poziom (weryfikacja przed startem)</li>
+                        <li className="flex items-start gap-2"><Check size={16} className="text-black mt-1 shrink-0" /> Dynamiczne konwersacje</li>
+                        <li className="flex items-start gap-2"><Check size={16} className="text-black mt-1 shrink-0" /> Więcej mówienia w krótszym czasie</li>
+                        <li className="flex items-start gap-2"><Check size={16} className="text-black mt-1 shrink-0" /> Nauka przez interakcję</li>
                     </ul><Button onClick={() => setShowContactModal(true)} className="mt-6 w-full rounded-2xl">Dołącz</Button></CardContent></Card>
                     <Card className="rounded-2xl shadow-md border-2 border-black h-full"><CardContent className="p-6 h-full flex flex-col"><h3 className="text-xl font-bold mb-4">Firmy (B2B)</h3><ul className="space-y-3 text-gray-600 flex-1">
-                        <li className="flex items-start gap-2"><Check size={16} className="text-blue-600 mt-1 shrink-0" /> Szkolenia dopasowane do branży</li>
-                        <li className="flex items-start gap-2"><Check size={16} className="text-blue-600 mt-1 shrink-0" /> Komunikacja biznesowa i spotkania</li>
-                        <li className="flex items-start gap-2"><Check size={16} className="text-blue-600 mt-1 shrink-0" /> Raporty postępów</li>
-                        <li className="flex items-start gap-2"><Check size={16} className="text-blue-600 mt-1 shrink-0" /> Elastyczne godziny</li>
+                        <li className="flex items-start gap-2"><Check size={16} className="text-black mt-1 shrink-0" /> Szkolenia dopasowane do branży</li>
+                        <li className="flex items-start gap-2"><Check size={16} className="text-black mt-1 shrink-0" /> Komunikacja biznesowa i spotkania</li>
+                        <li className="flex items-start gap-2"><Check size={16} className="text-black mt-1 shrink-0" /> Raporty postępów</li>
+                        <li className="flex items-start gap-2"><Check size={16} className="text-black mt-1 shrink-0" /> Elastyczne godziny</li>
                     </ul><Button onClick={() => setShowContactModal(true)} className="mt-6 w-full rounded-2xl">Zapytaj o ofertę</Button></CardContent></Card>
                 </div>
             </section>
