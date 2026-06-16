@@ -4,7 +4,6 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Phone, MessageCircle, Mail, X, Check, Users, Globe, User, FileText, Star } from "lucide-react";
 import { useState } from "react";
 import { motion } from "framer-motion";
-import heroLesson from "@/assets/hero-lesson.png";
 
 export default function App() {
     const [showContactModal, setShowContactModal] = useState(false);
@@ -18,46 +17,7 @@ export default function App() {
         <div className="min-h-screen bg-gradient-to-b from-sky-50 via-white to-sky-50 text-gray-900 overflow-x-hidden">
             {/* HERO */}
             <section className="max-w-6xl mx-auto px-6 py-20 grid md:grid-cols-2 gap-10 items-center">
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    className="relative order-2 md:order-1 mx-auto w-full min-h-[420px] sm:min-h-[480px]"
-                >
-                    <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-white via-sky-50/40 to-white" />
-
-                    <div className="absolute right-0 top-1/2 z-[1] h-56 w-56 sm:h-72 sm:w-72 -translate-y-1/2 rounded-full bg-blue-100/90" />
-
-                    <img
-                        src={heroLesson}
-                        alt="Kursantka podczas lekcji angielskiego online"
-                        className="absolute bottom-0 right-0 z-[2] h-[88%] w-auto max-w-[72%] object-contain object-bottom"
-                    />
-
-                    <div className="absolute left-0 top-6 z-[3] w-[200px] sm:w-[220px] rounded-2xl bg-white p-4 shadow-xl ring-1 ring-black/5">
-                        <div className="flex items-center gap-1">
-                            {["https://randomuser.me/api/portraits/men/62.jpg", "https://randomuser.me/api/portraits/women/21.jpg", "https://randomuser.me/api/portraits/women/28.jpg", "https://randomuser.me/api/portraits/women/12.jpg"].map((src, i) => (
-                                <img key={i} src={src} className="h-8 w-8 rounded-full border-2 border-white object-cover -ml-2 first:ml-0" alt="" />
-                            ))}
-                            <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-blue-600 text-[10px] font-bold text-white">300+</div>
-                        </div>
-                        <p className="mt-3 text-2xl font-bold leading-none text-gray-900">5000+</p>
-                        <p className="mt-1 text-sm font-medium text-gray-700">przeprowadzonych lekcji</p>
-                        <div className="my-3 border-t border-gray-100" />
-                        <div className="flex items-end gap-1">
-                            <span className="text-3xl font-bold leading-none text-blue-600">5</span>
-                            <Star size={18} className="mb-1 fill-blue-600 text-blue-600" />
-                        </div>
-                        <p className="mt-1 text-sm text-gray-600">ocen od uczniów</p>
-                    </div>
-
-                    <div className="absolute bottom-4 left-0 right-12 sm:right-16 z-[3] rounded-2xl border border-orange-100 bg-orange-50 p-5 shadow-lg">
-                        <p className="text-base font-medium leading-snug text-gray-800 sm:text-lg">
-                            Po pierwszej lekcji zaczynasz mówić – bez perfekcjonizmu, ale skutecznie.
-                        </p>
-                    </div>
-                </motion.div>
-
-                <div className="order-1 md:order-2">
+                <div>
                     <p className="text-sm font-semibold text-blue-600 mb-2">Angielski dla dorosłych • Konwersacje • Realne efekty</p>
                     <h1 className="text-4xl md:text-5xl font-bold leading-tight">Zacznij mówić po angielsku już od pierwszej lekcji</h1>
                     <p className="mt-6 text-lg text-gray-600">Angielski, którego naprawdę użyjesz — w pracy, na rozmowach i w życiu codziennym.<br />Bez stresu i zbędnej teorii.</p>
@@ -71,6 +31,23 @@ export default function App() {
                         <a href="tel:737671073" onClick={handlePhoneClick} className="inline-flex text-base px-6 py-2 rounded-2xl items-center justify-center gap-2 w-full bg-gray-50 border border-gray-300 hover:bg-gray-100 transition-colors text-inherit leading-none"><Phone size={18} /> 737 671 073</a>
                     </div>
                 </div>
+
+                <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
+                    <div className="rounded-2xl shadow-xl p-8 bg-orange-50 border border-orange-100 opacity-80">
+                        <p className="text-lg font-medium">Po pierwszej lekcji zaczynasz mówić – bez perfekcjonizmu, ale skutecznie.</p>
+                        <div className="mt-6 flex items-center gap-3">
+                            <div className="flex -space-x-2 shrink-0 justify-start">
+                                {["https://randomuser.me/api/portraits/men/62.jpg", "https://randomuser.me/api/portraits/women/21.jpg", "https://randomuser.me/api/portraits/women/28.jpg"].map((src, i) => (<img key={i} src={src} className="w-8 h-8 rounded-full border-2 border-white object-cover" alt="" />))}
+                                <div className="w-8 h-8 rounded-full bg-gray-200 flex items-center justify-center text-xs font-semibold border-2 border-white">300+</div>
+                            </div>
+                            <div className="text-gray-600 leading-tight">
+                                <p className="hidden sm:block text-sm">5000+ przeprowadzonych lekcji • 5★ ocen</p>
+                                <p className="block sm:hidden text-[11px]">5000+ lekcji</p>
+                                <p className="block sm:hidden text-[11px]">5★ ocen</p>
+                            </div>
+                        </div>
+                    </div>
+                </motion.div>
             </section>
 
             {/* DLACZEGO JA */}
