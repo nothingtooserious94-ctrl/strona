@@ -61,7 +61,7 @@ export default function App() {
                         {[
                             { icon: Users, title: "10+ lat doświadczenia", desc: "Indywidualnie, grupy, firmy" },
                             { icon: MessageCircle, title: "100% praktycznej konwersacji", desc: "" },
-                            { icon: Globe, title: "Doświadczenie w USA i Anglii,", desc: "Praca z native speakerami" },
+                            { icon: Globe, title: "Doświadczenie w USA i Anglii", desc: "Praca z native speakerami" },
                             { icon: User, title: "Indywidualne podejście", desc: "każda lekcja dopasowana" },
                             { icon: FileText, title: "Autorskie materiały", desc: "i realne scenariusze" },
                             { icon: Star, title: "Feedback i notatki", desc: "po każdej lekcji" }
