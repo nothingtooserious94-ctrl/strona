@@ -22,9 +22,9 @@ export default function App() {
                     <h1 className="text-4xl md:text-5xl font-bold leading-tight">Zacznij mówić po angielsku już od pierwszej lekcji</h1>
                     <p className="mt-6 text-lg text-gray-600">Angielski, którego naprawdę użyjesz — w pracy, na rozmowach i w życiu codziennym.<br />Bez stresu i zbędnej teorii.</p>
                     <ul className="mt-6 space-y-3 text-gray-700">
-                        <li className="flex items-center gap-2"><Check size={20} className="text-black shrink-0" /><span className="font-medium">Przełamiesz blokadę mówienia</span></li>
-                        <li className="flex items-center gap-2"><Check size={20} className="text-black shrink-0" /><span className="font-medium">Nauka dopasowana do Twoich celów</span></li>
-                        <li className="flex items-center gap-2"><Check size={20} className="text-black shrink-0" /><span className="font-medium">Konkretny feedback po każdej lekcji</span></li>
+                        <li className="flex items-center gap-2"><Check size={16} className="text-black shrink-0" /><span className="font-medium">Przełamiesz blokadę mówienia</span></li>
+                        <li className="flex items-center gap-2"><Check size={16} className="text-black shrink-0" /><span className="font-medium">Nauka dopasowana do Twoich celów</span></li>
+                        <li className="flex items-center gap-2"><Check size={16} className="text-black shrink-0" /><span className="font-medium">Konkretny feedback po każdej lekcji</span></li>
                     </ul>
                     <div className="mt-8 flex flex-col gap-4 w-full">
                         <Button onClick={() => setShowContactModal(true)} className="text-lg px-6 py-4 rounded-2xl bg-blue-600 hover:bg-blue-700 hover:text-white text-white w-full">Umów pierwszą lekcję</Button>
