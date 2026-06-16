@@ -4,6 +4,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Phone, MessageCircle, Mail, X, Check, Users, Globe, User, FileText, Star } from "lucide-react";
 import { useState } from "react";
 import { motion } from "framer-motion";
+import heroLesson from "@/assets/hero-lesson.png";
 
 export default function App() {
     const [showContactModal, setShowContactModal] = useState(false);
@@ -32,18 +33,47 @@ export default function App() {
                     </div>
                 </div>
 
-                <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
-                    <div className="rounded-2xl shadow-xl p-8 bg-orange-50 border border-orange-100 opacity-80">
-                        <p className="text-lg font-medium">Po pierwszej lekcji zaczynasz mówić – bez perfekcjonizmu, ale skutecznie.</p>
-                        <div className="mt-6 flex items-center gap-3">
-                            <div className="flex -space-x-2 shrink-0 justify-start">
-                                {["https://randomuser.me/api/portraits/men/62.jpg", "https://randomuser.me/api/portraits/women/21.jpg", "https://randomuser.me/api/portraits/women/28.jpg"].map((src, i) => (<img key={i} src={src} className="w-8 h-8 rounded-full border-2 border-white object-cover" alt="" />))}
-                                <div className="w-8 h-8 rounded-full bg-gray-200 flex items-center justify-center text-xs font-semibold border-2 border-white">300+</div>
-                            </div>
-                            <div className="text-gray-600 leading-tight">
-                                <p className="hidden sm:block text-sm">5000+ przeprowadzonych lekcji • 5★ ocen</p>
-                                <p className="block sm:hidden text-[11px]">5000+ lekcji</p>
-                                <p className="block sm:hidden text-[11px]">5★ ocen</p>
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    className="relative mx-auto w-full max-w-md md:max-w-none"
+                >
+                    <div className="absolute -inset-3 rounded-[2rem] bg-gradient-to-br from-blue-100/70 via-orange-50 to-sky-100 -z-10" />
+                    <div className="absolute -top-2 -right-2 h-20 w-20 rounded-full bg-blue-400/20 blur-2xl" />
+                    <div className="absolute bottom-24 -left-4 h-28 w-28 rounded-full bg-orange-300/25 blur-2xl" />
+
+                    <div className="relative overflow-hidden rounded-[1.75rem] shadow-2xl ring-1 ring-black/5">
+                        <img
+                            src={heroLesson}
+                            alt="Kursantka podczas lekcji angielskiego online"
+                            className="aspect-[4/5] w-full object-cover object-[center_15%]"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-[#1a2b4b]/75 via-[#1a2b4b]/15 to-transparent" />
+
+                        <div className="absolute left-4 top-4 inline-flex items-center gap-2 rounded-full bg-white/90 px-3 py-1.5 text-xs font-semibold text-blue-700 shadow-md backdrop-blur-sm">
+                            <MessageCircle size={14} className="shrink-0" />
+                            Lekcja online
+                        </div>
+
+                        <div className="absolute inset-x-0 bottom-0 p-4 sm:p-5">
+                            <div className="rounded-2xl border border-white/20 bg-white/95 p-5 shadow-xl backdrop-blur-md">
+                                <p className="text-base font-semibold leading-snug text-gray-800 sm:text-lg">
+                                    Po pierwszej lekcji zaczynasz mówić –{" "}
+                                    <span className="text-blue-600">bez perfekcjonizmu</span>, ale skutecznie.
+                                </p>
+                                <div className="mt-4 flex items-center gap-3">
+                                    <div className="flex -space-x-2 shrink-0 justify-start">
+                                        {["https://randomuser.me/api/portraits/men/62.jpg", "https://randomuser.me/api/portraits/women/21.jpg", "https://randomuser.me/api/portraits/women/28.jpg"].map((src, i) => (
+                                            <img key={i} src={src} className="h-8 w-8 rounded-full border-2 border-white object-cover" alt="" />
+                                        ))}
+                                        <div className="flex h-8 w-8 items-center justify-center rounded-full border-2 border-white bg-gray-200 text-xs font-semibold">300+</div>
+                                    </div>
+                                    <div className="leading-tight text-gray-600">
+                                        <p className="hidden sm:block text-sm">5000+ przeprowadzonych lekcji • 5★ ocen</p>
+                                        <p className="block sm:hidden text-[11px]">5000+ lekcji</p>
+                                        <p className="block sm:hidden text-[11px]">5★ ocen</p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
