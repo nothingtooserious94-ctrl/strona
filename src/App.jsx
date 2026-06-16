@@ -1,7 +1,7 @@
 import React from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Phone, MessageCircle, Mail, X, Check } from "lucide-react";
+import { Phone, MessageCircle, Mail, X, Check, Users, Globe, User, FileText, Star } from "lucide-react";
 import { useState } from "react";
 import { motion } from "framer-motion";
 
@@ -22,9 +22,9 @@ export default function App() {
                     <h1 className="text-4xl md:text-5xl font-bold leading-tight">Zacznij mówić po angielsku już od pierwszej lekcji</h1>
                     <p className="mt-6 text-lg text-gray-600">Angielski, którego naprawdę użyjesz — w pracy, na rozmowach i w życiu codziennym.<br />Bez stresu i zbędnej teorii.</p>
                     <ul className="mt-6 space-y-3 text-gray-700">
-                        <li className="flex items-center gap-2"><Check size={20} className="text-blue-600" /> Przełamiesz blokadę mówienia</li>
-                        <li className="flex items-center gap-2"><Check size={20} className="text-blue-600" /> Nauka dopasowana do Twoich celów</li>
-                        <li className="flex items-center gap-2"><Check size={20} className="text-blue-600" /> Konkretny feedback po każdej lekcji</li>
+                        <li className="flex items-center gap-2"><Check size={20} className="text-blue-600 shrink-0" /><span className="font-medium">Przełamiesz blokadę mówienia</span></li>
+                        <li className="flex items-center gap-2"><Check size={20} className="text-blue-600 shrink-0" /><span className="font-medium">Nauka dopasowana do Twoich celów</span></li>
+                        <li className="flex items-center gap-2"><Check size={20} className="text-blue-600 shrink-0" /><span className="font-medium">Konkretny feedback po każdej lekcji</span></li>
                     </ul>
                     <div className="mt-8 flex flex-col gap-4 w-full">
                         <Button onClick={() => setShowContactModal(true)} className="text-lg px-6 py-4 rounded-2xl bg-blue-600 hover:bg-blue-700 hover:text-white text-white w-full">Umów pierwszą lekcję</Button>
@@ -37,7 +37,8 @@ export default function App() {
                         <p className="text-lg font-medium">Po pierwszej lekcji zaczynasz mówić – bez perfekcjonizmu, ale skutecznie.</p>
                         <div className="mt-6 flex items-center gap-3">
                             <div className="flex -space-x-2 shrink-0 justify-start">
-                                {["https://randomuser.me/api/portraits/men/62.jpg", "https://randomuser.me/api/portraits/women/21.jpg", "https://randomuser.me/api/portraits/women/28.jpg"].map((src, i) => (<img key={i} src={src} className="w-8 h-8 rounded-full border-2 border-white object-cover" />))}{<div className="w-8 h-8 rounded-full bg-gray-200 flex items-center justify-center text-xs font-semibold border-2 border-white">300+</div>}
+                                {["https://randomuser.me/api/portraits/men/62.jpg", "https://randomuser.me/api/portraits/women/21.jpg", "https://randomuser.me/api/portraits/women/28.jpg"].map((src, i) => (<img key={i} src={src} className="w-8 h-8 rounded-full border-2 border-white object-cover" alt="" />))}
+                                <div className="w-8 h-8 rounded-full bg-gray-200 flex items-center justify-center text-xs font-semibold border-2 border-white">300+</div>
                             </div>
                             <div className="text-gray-600 leading-tight">
                                 <p className="hidden sm:block text-sm">5000+ przeprowadzonych lekcji • 5★ ocen</p>
@@ -50,18 +51,33 @@ export default function App() {
             </section>
 
             {/* DLACZEGO JA */}
-            <section className="bg-gray-50 py-16">
-                <div className="max-w-6xl mx-auto px-6">
-                    <h2 className="text-3xl font-semibold mb-10">Dlaczego ja?</h2>
-                    <div className="grid md:grid-cols-3 gap-6">
+            <section className="bg-gray-50/60 py-20">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6">
+                    <div className="text-center mb-12">
+                        <h2 className="text-3xl md:text-4xl font-bold text-[#1a2b4b]">Dlaczego warto uczyć się ze mną?</h2>
+                        <div className="mx-auto mt-3 h-1 w-14 rounded-full bg-blue-600" />
+                    </div>
+                    <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-6 gap-4 xl:gap-3">
                         {[
-                            "10+ lat doświadczenia (indywidualnie, grupy, firmy)",
-                            "Konwersacja, nauczanie dorosłych + fonetyka",
-                            "Doświadczenie zdobywałem w USA i Anglii, pracując z native speakerami",
-                            "Indywidualne podejście – każda lekcja dopasowana",
-                            "Autorskie materiały i realne scenariusze",
-                            "Feedback i notatki po każdej lekcji"
-                        ].map((item, i) => (<Card key={i} className="rounded-2xl"><CardContent className="p-6">{item}</CardContent></Card>))}
+                            { icon: Users, title: "10+ lat doświadczenia", desc: "Indywidualnie, grupy, firmy" },
+                            { icon: MessageCircle, title: "100% praktycznej konwersacji", desc: "" },
+                            { icon: Globe, title: "Doświadczenie w USA i Anglii,", desc: "Praca z native speakerami" },
+                            { icon: User, title: "Indywidualne podejście", desc: "każda lekcja dopasowana" },
+                            { icon: FileText, title: "Autorskie materiały", desc: "i realne scenariusze" },
+                            { icon: Star, title: "Feedback i notatki", desc: "po każdej lekcji" }
+                        ].map(({ icon: Icon, title, desc }, i) => (
+                            <div key={i} className="flex flex-col items-center rounded-2xl border border-slate-100 bg-white px-3 py-6 text-center shadow-[0_4px_20px_rgba(26,43,75,0.06)] sm:px-4">
+                                <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-[#eef2ff]">
+                                    <Icon size={30} strokeWidth={2.25} className="text-[#2563eb]" />
+                                </div>
+                                <p className="text-sm font-bold leading-snug text-[#1a2b4b] sm:text-[15px]">{title}</p>
+                                {desc && (
+                                    <p className="mt-2 text-xs leading-snug text-slate-500 sm:text-sm">
+                                        {desc}
+                                    </p>
+                                )}
+                            </div>
+                        ))}
                     </div>
                 </div>
             </section>
@@ -88,7 +104,7 @@ export default function App() {
                 <div className="max-w-6xl mx-auto px-6">
                     <div className="text-center mb-12">
                         <h2 className="text-3xl font-semibold">Opinie kursantów</h2>
-                        <p className="text-gray-600 mt-4">Realne efekty. Realne osoby. Zero marketingowego bullshitu.</p>
+                        <p className="text-gray-600 mt-4">Szczerze o lekcjach i efektach nauki.</p>
                         <div className="flex justify-center gap-10 mt-8">
                             <div><p className="text-3xl font-bold">10+ lat</p><p className="text-gray-500 text-sm">doświadczenia</p></div>
                             <div><p className="text-3xl font-bold">5000+</p><p className="text-gray-500 text-sm">lekcji</p></div>
@@ -98,10 +114,10 @@ export default function App() {
                     <div className="grid md:grid-cols-3 gap-6">
                         {[
                             { name: "Emilia", avatar: "https://randomuser.me/api/portraits/women/12.jpg", text: "W kilka miesięcy przeszłam z A1 do rozmów na B1. Wszystko naturalnie, bez stresu. Marcin to tytan cierpliwości. Profesjonalne podejście." },
-                            { name: "Szymon", avatar: "https://randomuser.me/api/portraits/men/76.jpg", text: "W końcu przestałem się bać mówić. Rozmowa stała się przyjemnością. Polecam z całego serducha!" },
+                            { name: "Szymon", avatar: "https://randomuser.me/api/portraits/men/76.jpg", text: "Jeszcze niedawno bałem się mówić po angielsku. Dziś rozmowa sprawia mi przyjemność. Polecam Marcina z całego serducha!" },
                             { name: "Mateusz", avatar: "https://randomuser.me/api/portraits/men/23.jpg", text: "Na początku mówiłem pojedynczymi zdaniami i ciągle się zacinałem. Po kilku tygodniach zacząłem normalnie rozmawiać, nawet w pracy, gdzie wcześniej unikałem angielskiego =)" },
                             { name: "Anna", avatar: "https://randomuser.me/api/portraits/women/63.jpg", text: "Ogromna różnica w pracy. Maile i spotkania przestały być problemem. W końcu czuję się swobodnie podczas rozmów." },
-                            { name: "Adam", avatar: "https://randomuser.me/api/portraits/men/62.jpg", text: "Zajęcia z Marcinem pozwoliły mi na pracę za granicą i otworzyły możliwości na globalny rynek." },
+                            { name: "Adam", avatar: "https://randomuser.me/api/portraits/men/62.jpg", text: "Dzięki zajęciom z Marcinem zdobyłem pewność siebie w komunikacji po angielsku, co pomogło mi znaleźć pracę za granicą. Dziś mieszkam poza Polską i wiem, jak ogromną różnicę zrobiła ta inwestycja w siebie." },
                             { name: "Patrycja", avatar: "https://randomuser.me/api/portraits/women/28.jpg", text: "Dużo cierpliwości i świetna atmosfera. Z każdej lekcji wychodzę z konkretnymi umiejętnościami." }
                         ].map((item, i) => (<motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.4, delay: i * 0.1 }} viewport={{ once: true }}><Card className="rounded-2xl shadow-sm hover:shadow-lg transition bg-orange-100 border-orange-200"><CardContent className="p-6"><div className="flex items-center gap-3 mb-3"><img src={item.avatar} className="w-10 h-10 rounded-full object-cover" /><div><p className="font-semibold">{item.name}</p><p className="text-green-500 text-sm">★★★★★</p></div></div><p className="text-gray-600">{item.text}</p></CardContent></Card></motion.div>))}
                     </div>
